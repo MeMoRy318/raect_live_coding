@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {RequestServer} from "../../services";
 import {usePosts} from "../../myCastomsHooks";
+import {Post} from "../Post/Post";
 
 
 const requestServer = new RequestServer();
@@ -18,24 +19,14 @@ export const Posts =  () => {
 
 
     const [posts,setPosts, error] = usePosts()
+    // const [posts,setPosts, error] = usePosts()
+
 
 
     return (
-
-        <div>
-            {JSON.stringify(posts)}
-        </div>
-        // <ul>
-        //
-        //     {!!posts?.length && [...posts].map(item => {
-        //         const  {id, title} = item
-        //         return (
-        //             <li key={id}>
-        //                 ID: {id}, Title: {title}
-        //             </li>
-        //         )
-        //     })}
-        // </ul>
+        <ul>
+            {!!posts.length && [...posts].map(item => <Post post={item} key={item.id}/>)}
+        </ul>
     );
 };
 

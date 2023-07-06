@@ -1,4 +1,4 @@
  export const postUrls = {
-    getAllPosts:'/posts',
+    getAllPosts:'posts',
     getPostById:(id) => `${this.getAllPosts}/${id}`
 }
