@@ -6,6 +6,7 @@ import {Post} from "../Post/Post";
 
 const requestServer = new RequestServer();
 export const Posts =  () => {
+
     // console.log(requestServer)
     // const [posts, setPosts] = useState([])
     //
