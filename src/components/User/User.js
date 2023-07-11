@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {UserDetalis} from "../UserDetails/UserDetalis";
 import {UserAddress} from "../UserAddress/UserAddress";
 import {Company} from "../Company/Company";
 import {MyButton} from "../../Hok/MyButton";
+import {UsersContext} from "../../Hok/UsersContext";
 
-const User = ({user, setPostId}) => {
+const User = ({user}) => {
+    const { setPostId } = useContext(UsersContext)
+
     const {address,company,...rest} = user;
     return (
         <li>
