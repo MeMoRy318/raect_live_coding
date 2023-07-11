@@ -17,20 +17,5 @@ const usePostsById = ( id = 0) => {
     }
 }
 
-const usePostsByIdArtem = ( id = 0) => {
 
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        if (id){
-            postService.getPostsByUserId(id).then(({data}) => setPosts(data))
-        }
-    }, [id]);
-
-    return {
-         posts,setPosts
-    }
-}
-
-
-export { usePostsById, usePostsByIdArtem };
+export { usePostsById };
