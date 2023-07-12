@@ -1,8 +1,8 @@
 import React, {useContext} from 'react';
 import {User} from '../User/User'
-import {UsersContext} from "../../Hok/UsersContext";
-const Users = () => {
-    const { users } = useContext(UsersContext)
+
+const Users = ({users}) => {
+
     return (
         <ul>
             {
