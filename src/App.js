@@ -8,7 +8,7 @@ const App = () => {
 
     return (
         <div>
-            <UsersContextHok >
+            <UsersContextHok>
                 <Users users={users}/>
                 <hr/>
                 <Posts/>
