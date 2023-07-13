@@ -10,17 +10,16 @@ const PageRegisterForm = () => {
     })
     const handelSubmit = async (e) => {
         e.preventDefault()
-        console.log("FORM", e.target)
-        const formData = new FormData(e.target);
-        console.log(formData)
+        // console.log("FORM", e.target)
+        // const formData = new FormData(e.target);
+        // console.log(Object.fromEntries([...formData.entries()]))
         // console.log([...formData.keys()]);
         // console.log([...formData.values()]);
         // const response = await fetch("https://jsonplaceholder.typicode.com/users/", {
         //
         // })
-        const response = await usersService.postUser(formData)
+        const response = await usersService.postUser(formValue)
         // const response = await usersService.postUser(formValue)
-        console.log(response)
     };
 
     const changeHandelForm = (e,key) => {

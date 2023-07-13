@@ -10,6 +10,9 @@ export class MyFetch {
     post(urls = '', body) {
         return fetch(this.urls + urls, {
             method: 'POST',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
             body: JSON.stringify(body)
             // body: body
         }).then(value => value.json());
