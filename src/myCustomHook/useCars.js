@@ -4,12 +4,20 @@ import {deleteCar} from "../utility/deleteCar";
 
 export const useCars = () => {
     const [cars,setCars] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState('')
+
 
     useEffect(()=>{
-        carsService.getAllCars().then(({data}) => setCars(data))
+        setIsLoading(!isLoading);
+        carsService.getAllCars().then(({data}) => {
+            setCars(data)
+        },error =>setIsError(error.message) ).finally(() =>{
+            setIsLoading(!isLoading);
+        } )
     },[])
 
-   const carDelete = deleteCar.bind(setCars)
-    return {cars,setCars,carDelete}
+   const carDelete = deleteCar.bind(null,setCars)
+    return {cars,setCars,carDelete,isLoading,isError}
 }
 
