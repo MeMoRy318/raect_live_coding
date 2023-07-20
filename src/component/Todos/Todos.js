@@ -1,10 +1,15 @@
 import React from 'react';
 
-const Todos = () => {
-    return (
-        <div>
+const Todos = ({todos}) => {
 
-        </div>
+    const {id,title,completed} = todos;
+
+    return (
+        <ul>
+            <li>ID: {id}</li>
+            <li>TITLE: {title}</li>
+            <li>COMPLETED: {completed}</li>
+        </ul>
     );
 };
 
