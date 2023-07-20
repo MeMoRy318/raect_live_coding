@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef} from 'react';
+import {useFetching} from "./myCustomHook/useFetching";
+import axios from "axios";
+import {useInput} from "./myCustomHook/useInput";
+import {logDOM} from "@testing-library/react";
+import {useHover} from "./myCustomHook/useHover";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    //const {response,isLoading,error} = useFetching(axios.get('https://jsonplaceholder.typicode.com/posts'))
 
-export default App;
+   const test = useInput('')
+   let ref = useRef();
+    const isHovering =  useHover(ref)
+
+    console.log(isHovering)
+    return (
+        <div >
+            <form>
+                <input {...test} type="text"/>
+                <button ref={ref} style={{
+                    position:'absolute',
+                    right: isHovering ? `${Math.random()*1000}%` : `${Math.random()*90}%`,
+                    bottom: isHovering ? `${Math.random()*1000}%` : `${Math.random()*90}%`
+                }}>button Хуй попадёшь</button>
+            </form>
+        </div>
+    );
+};
+
+export {App};
