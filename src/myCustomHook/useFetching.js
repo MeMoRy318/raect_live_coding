@@ -1,24 +1,24 @@
 import {useEffect, useState} from "react";
 
-export const useFetching = (callback,deps = 0) => {
+export function useFetching  (callback,deps = 0)  {
 
-    const [ response, setResponse] = useState(null);
     const [ isLoading, setIsLoading] = useState(false);
+    const [ data, setData] = useState(null);
     const [ error, setError] = useState('');
 
     useEffect(()=>{
         (async function () {
             setIsLoading(true)
             try {
-                const response = await callback;
-                 setResponse(response)
+                const {data} = await callback;
+                setData(data)
             }catch (e) {
-                setError(e.message)
+                setError(e)
             }finally {
                 setIsLoading(false)
             }
         }())
     },[deps])
 
-    return { response, isLoading, error }
+    return { data, isLoading, error }
 }
