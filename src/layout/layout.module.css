@@ -1,0 +1,12 @@
+.wrapper{
+min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    max-width: 90%;
+    width: 100%;
+    flex: 1 1 auto;
+    margin: 0 auto;
+    background: silver;
+}
