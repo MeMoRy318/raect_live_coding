@@ -20,6 +20,7 @@ class PostComments extends Component{
             this.setState({comments})
         }
     }
+
     render() {
         const {comments} = this.state
         console.log(comments)
