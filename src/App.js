@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Comments, Posts} from "./componets";
+import {Cars} from "./componets/Cars/Cars";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const App = () => {
+    return (
+        <div
+            style={{
+                display: "flex"
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <Cars/>
+            <Comments/>
+            <Posts/>
+        </div>
+    );
+};
 
-export default App;
+export {App};
