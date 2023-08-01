@@ -12,7 +12,8 @@ const urls = {
           base: 'posts'
       },
       comments:{
-          base:'comments'
+          base:'comments',
+          getById: (id) => `posts/${id}/comments`
       }
     }
 }

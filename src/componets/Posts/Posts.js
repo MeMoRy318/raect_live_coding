@@ -1,11 +1,15 @@
 import React, {Component} from 'react'
 import {postService} from "../../service/postService";
 import {Post} from "../Post/Post";
+
+
+
 export class Posts  extends Component{
         constructor(props) {
             super(props);
             this.state = {
                 posts: [],
+
             }
         }
 
@@ -31,7 +35,7 @@ export class Posts  extends Component{
                     <ul>
                         {
                            !!posts?.length
-                               ? posts.map(post => <Post key={post.id} post={post}/>)
+                               ? posts.map(post => <Post key={post.id} post={post} setPostId={this.props.setPostId}/>)
                                : <div>not posts</div>
                         }
                     </ul>
@@ -39,3 +43,26 @@ export class Posts  extends Component{
             )
         }
 }
+
+// class PostsLists extends Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             postId: null
+//         }
+//     }
+//
+//     handleGetcommentsByPostId = () => {
+//         try {
+//
+//         }
+//     }
+//
+//     render() {
+//         return (
+//             <>
+//                 {}
+//             </>
+//         )
+//     }
+// }
