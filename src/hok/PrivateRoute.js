@@ -12,7 +12,7 @@ const PrivateRoute = ({children}) => {
         if (!isLogin) {
             navigate("/session-timed-out");
         }
-    }, [isLogin]);
+    });
 
 
         return (
